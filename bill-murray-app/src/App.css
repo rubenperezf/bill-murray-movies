@@ -6,6 +6,8 @@ body {
 .header {
   text-align: center;
   font-size: 50px;
+  text-decoration: none;
+  color: black;
 }
 .movies { 
   border: 1px solid black;
