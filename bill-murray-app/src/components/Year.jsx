@@ -26,7 +26,7 @@ function Year({props}) {
                     {props.filter(movies =>movies.year===year || movies.title.toLowerCase()===title)
                     .map(movies => {
                         return (
-                            <li key={movies.id}>
+                            <li key={movies._id}>
                                 <br></br>
                                 {movies.title}
                                 <br></br>

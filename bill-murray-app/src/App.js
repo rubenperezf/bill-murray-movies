@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from './components/Header'
-import axios from 'axios'
 import {Link, Router} from '@reach/router'
 import Year from './components/Year'
-import Movies from './components/Movies'
+import Details from './components/Details'
+import axios from 'axios'
+
 
 
 
