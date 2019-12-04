@@ -23,7 +23,7 @@ body {
 
 }
 .squares:hover {
-  background-image: url('https://d2ycltig8jwwee.cloudfront.net/features/419/fullwidth.842aeb23.jpg');
+  background-image: url('https://www.tvovermind.com/wp-content/uploads/2018/10/Murray-Caddyshack-750x415.jpg');
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
