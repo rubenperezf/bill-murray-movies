@@ -35,6 +35,7 @@ function App() {
         </Link>
       <Router>
       <Year props={properties} path='/'/>
+      <Details path='details/:id'/>
       
  
      

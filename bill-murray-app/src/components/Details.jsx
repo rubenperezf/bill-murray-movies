@@ -21,6 +21,7 @@ const Details = props => {
     <div>
       <h1>Im details!</h1>
       <h2>The Movie ID is: {props.id} </h2>
+      <h3>{JSON.stringify(properties)}</h3>
 
     </div>
   );
