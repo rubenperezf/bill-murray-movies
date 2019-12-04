@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://d2ycltig8jwwee.cloudfront.net/features/419/fullwidth.842aeb23.jpg");
+  background-image: url('https://d2ycltig8jwwee.cloudfront.net/features/419/fullwidth.842aeb23.jpg');
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
@@ -9,20 +9,36 @@ body {
   text-decoration: none;
   color: black;
 }
+.container {
+  display: flex;
+}
 
-
-.movies { 
+.squares { 
   border: 1px solid black;
   width: 500px;
   text-align: center;
   padding: 10px;
   margin: 10px auto;
+
+
+}
+.squares:hover {
+  background-image: url('https://d2ycltig8jwwee.cloudfront.net/features/419/fullwidth.842aeb23.jpg');
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.squares:hover p{
   background-color: white;
-
-
 }
 form {
   font-size: 30px;
   color: red;
 }
+.details {
+  font-size: black;
+}
+
+
+
+
 

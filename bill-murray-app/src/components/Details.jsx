@@ -17,11 +17,14 @@ const Details = props => {
         console.log(err);
       });
   }, []);
+  let string = (JSON.stringify(properties))
   return (
-    <div>
+    <div className='details'>
       <h1>Im details!</h1>
       <h2>The Movie ID is: {props.id} </h2>
-      <h3>{properties}</h3>
+      
+      <h3>{string.substring(9,33)}</h3>
+      <h3>{string}</h3>
 
     </div>
   );

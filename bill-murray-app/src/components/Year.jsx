@@ -9,9 +9,9 @@ function Year({props}) {
         return <div>Loading</div>;
       } else {
         return (
-            <div className="movies">
+            <div className="squares">
                 <form>
-                    <label>Pick a year or write the title of one movie</label>
+                    <p>Pick a year or write the title of one movie</p>
                     <br></br>
                     <input
                     type="text"
@@ -27,13 +27,10 @@ function Year({props}) {
                     .map(movies => {
                         return (
                             <li key={movies._id}>
-                                <br></br>
-                                {movies.title}
-                                <br></br>
-                                {movies.year}
-                                <br></br>
-                                {movies.director}
-                                <br></br>
+                                <p>Title: {movies.title}</p>
+                                <p>Year: {movies.year}</p>
+                                <p>Director: {movies.director}</p>
+                                <p>Rol: {movies.role}</p>
                                 <img src={movies.img_url} alt="image"/>
                             </li>
                         )

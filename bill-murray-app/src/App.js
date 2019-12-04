@@ -2,16 +2,19 @@ import React, {useState, useEffect} from 'react';
 import Header from './components/Header'
 import {Link, Router} from '@reach/router'
 import Year from './components/Year'
-import Details from './components/Details'
 import axios from 'axios'
+import History from './components/History'
+
 
 
 
 
 import './App.css';
+import { DocumentProvider } from 'mongoose';
 
 function App() {
   const [properties, setProperties] = useState({});
+  const [properties2, setProperties2] = useState({});
 
   useEffect(() => {
     console.log("here")
@@ -25,23 +28,20 @@ function App() {
       console.log(err)
     })
   }, [])
-
-
+  
 
   return (
     <div className="App">
             <Link style={{textDecoration:"none"}} to='/'>
             <Header/>
         </Link>
-      <Router>
+      <div className="container">
       <Year props={properties} path='/'/>
-      <Details path='details/:id'/>
-      
- 
-     
-    
+      <History />
+      </div>      
 
-      </Router>
+
+
 
       
         
@@ -51,5 +51,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
