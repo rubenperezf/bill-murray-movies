@@ -22,11 +22,15 @@ function Home() {
       })
     }, [])
   return (
+      <div>
     <div className="container">
-      <Year props={properties} />
+        <Movies />
+     
       <History />
-      <Movies />
+   
     </div>
+       <Year props={properties} /> 
+       </div>
   );
 }
 

@@ -5,12 +5,14 @@ body {
 }
 .header {
   text-align: center;
-  font-size: 50px;
+  font-size: 20px;
   text-decoration: none;
   color: black;
 }
 .container {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   
 }
 
@@ -19,49 +21,52 @@ body {
   width: 500px;
   text-align: center;
   margin: 10px;
-  
-}
-
-.squares:hover {
+  border-radius: 100%;
   background-image: url('https://www.tvovermind.com/wp-content/uploads/2018/10/Murray-Caddyshack-750x415.jpg');
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
+  font-size: 30px;
+  color: red;
+  
 }
+.squares a {
+  text-decoration: none;
+  color: white;
+}
+
+.squares a:hover {
+
+  color: darkblue;
+}
+
+
+
 .squares:hover p{
   background-color: white;
 }
-.squares-movies {
+.squares-year { 
   border: 1px solid black;
   width: 500px;
   text-align: center;
   margin: 10px;
-  background-image: url('https://www.tvovermind.com/wp-content/uploads/2018/10/Murray-Caddyshack-750x415.jpg');
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
-.squares-movies a {
-  text-decoration: none;
-  color: black;
-}
-.squares-movies a:hover {
   background-color: white;
-}
-form {
   font-size: 30px;
   color: red;
+  
 }
+
 .details {
   font-size: black;
 }
-.hola {
-  width: 1000px;
-}
+
 .details {
   background-color: white;
   display: flex;
   width: 500px;
   margin: 0 auto;
 }
+
+
 
 
 

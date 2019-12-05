@@ -9,7 +9,7 @@ function Year({props}) {
         return <div>Loading</div>;
       } else {
         return (
-            <div className="squares">
+            <div className="squares-year">
                 <form>
                     <p>Pick a year or write the title of one movie</p>
                     <br></br>

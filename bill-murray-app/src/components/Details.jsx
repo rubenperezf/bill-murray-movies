@@ -31,6 +31,7 @@ function Details(props) {
   }, []);
   return (
     <div className="details">
+      
       <h2>          {data.list
           .filter(element=> element._id===props.id)
           .map(movies => {

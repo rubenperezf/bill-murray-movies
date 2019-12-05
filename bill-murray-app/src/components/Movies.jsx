@@ -29,7 +29,8 @@ function Movies(props) {
       });
   }, []);
   return (
-    <div className="squares-movies">
+    <div className="squares">
+        <p>Pick a movie</p>
       <h2>          {data.list
           .filter(element=> element._id===props.id)
           .map(movies => {
@@ -45,7 +46,8 @@ function Movies(props) {
           .map(movies => {
               return (
 
-                  <p key={movies._id}><a href={`http://localhost:3000/details/${movies._id}`}>{movies.title}</a></p>
+                 <a key={movies._id} href={`http://localhost:3000/details/${movies._id}`}>{movies.title}<br></br></a>
+                 
               )
           })}
       </div>
