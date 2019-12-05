@@ -92,10 +92,23 @@ const updateBillMurrayMovie = async (request, response) => {
     }
 }
 
+const getBillMurrayMovie = async (request, response) => {
+    try {
+        console.log("Get Bill Murray Movie: ", request.params.id)
+        const movie = await BillMurrayMoviesModel.find({id: request.params.id})
+        console.log(movie)
+        response.send(movie)
+    }
+        catch (error) {
+    response.status(500).send(error)
+    }
+}
+
 
 app.route("/BillMurrayMovies/:id")
     .delete(deleteBillMurrayMovie)
     .put(updateBillMurrayMovie)
+    .get(getBillMurrayMovie)
 app.route("/BillMurrayMovies")
     .post(postBillMurrayMovie)
     .get(getBillMurrayMovies)

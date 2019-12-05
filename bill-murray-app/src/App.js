@@ -4,17 +4,13 @@ import {Link, Router} from '@reach/router'
 import Year from './components/Year'
 import axios from 'axios'
 import History from './components/History'
-
-
-
-
+import Details from './components/Details'
 
 import './App.css';
-import { DocumentProvider } from 'mongoose';
+
 
 function App() {
   const [properties, setProperties] = useState({});
-  const [properties2, setProperties2] = useState({});
 
   useEffect(() => {
     console.log("here")
@@ -36,19 +32,21 @@ function App() {
             <Header/>
         </Link>
       <div className="container">
-      <Year props={properties} path='/'/>
-      <History />
-      </div>      
-
-
-
-
+      <Router>
+          <Year props={properties} path='/'/>
       
-        
+        <Details path='/details/:id'/>
+          </Router>
+          <History path='/' />
+      
+      
+      
 
-        
+      </div>
+      
 
-    </div>
+
+    </div>      
   );
 }
 

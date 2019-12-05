@@ -1,33 +1,66 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useReducer, useEffect } from "react";
 import axios from "axios";
 
-const Details = props => {
-  const [properties, setProperties] = useState({});
 
+export const dataReducer = (state, action) => {
+  if (action.type === "SET_ERROR") {
+    return { ...state, list: [], error: true };
+  }
+  if (action.type === "SET_LIST") {
+    return { ...state, list: action.list, error: null };
+  }
+  throw new Error();
+};
+const initialData = {
+  list: [],
+  error: null
+};
+function Details(props) {
+  const [counter, setCounter] = useState(1);
+  const [data, dispatch] = useReducer(dataReducer, initialData);
   useEffect(() => {
-    console.log("here");
     axios
       .get("http://localhost:2400/BillMurrayMovies")
-      .then(res => {
-        console.log(res);
-        const movies = res.data;
-        setProperties(movies);
+      .then(response => {
+        console.log(response);
+        dispatch({ type: "SET_LIST", list: response.data });
       })
-      .catch(err => {
-        console.log(err);
+      .catch(() => {
+        dispatch({ type: "SET_ERROR" });
       });
   }, []);
-  let string = (JSON.stringify(properties))
   return (
-    <div className='details'>
-      <h1>Im details!</h1>
-      <h2>The Movie ID is: {props.id} </h2>
-      
-      <h3>{string.substring(9,33)}</h3>
-      <h3>{string}</h3>
+    <div>
+      <h2>          {data.list
+          .filter(element=> element._id===props.id)
+          .map(movies => {
+              return (
+                  <p key={movies._id}>
+                      <p>Title: {movies.title}</p>
+                  </p>
+              )
+          })}</h2>
+      {data.error && <div className="error">Error</div>}
+      <ul>
+          {data.list
+          .filter(element=> element._id===props.id)
+          .map(movies => {
+              return (
+                  <li key={movies._id}>
+                      <p>Year: {movies.year}</p>
+                      <p>Director: {movies.director}</p>
+                      <p>Rol: {movies.role}</p>
+                      <img src={movies.img_url} alt="image"/>
+                      <p>{movies._id}</p>
+                  </li>
+              )
+          })}
+      </ul>
 
+ 
+      <h1>{props.id}</h1>
     </div>
   );
-};
+}
 
 export default Details;

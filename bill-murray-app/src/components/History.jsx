@@ -59,7 +59,7 @@ export default class PersonList extends React.Component {
     return (
       <div className="squares">
         <form onSubmit={this.handleSubmit}>
-        <p>If I don't have a Bill Murray movie please type it!</p>
+        <p>Add a Bill Murray movie here!</p>
           <label>
             Title:
             <input type="text" name="name" onChange={this.handleChangeTitle} />
