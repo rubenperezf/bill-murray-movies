@@ -27,7 +27,7 @@ function Year({props}) {
                     .map(movies => {
                         return (
                             <li key={movies._id}>
-                                <p>Title: {movies.title}</p>
+                                <p><a href={`http://localhost:3000/details/${movies._id}`}>Title: {movies.title}</a></p>
                                 <p>Year: {movies.year}</p>
                                 <p>Director: {movies.director}</p>
                                 <p>Rol: {movies.role}</p>
