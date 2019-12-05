@@ -1,7 +1,9 @@
 import React, { useState, useReducer, useEffect } from "react";
 import Year from "./Year";
 import History from "./History";
+import Movies from "./Movies";
 import axios from 'axios'
+
 
 
 function Home() {
@@ -20,9 +22,10 @@ function Home() {
       })
     }, [])
   return (
-    <div>
+    <div className="container">
       <Year props={properties} />
       <History />
+      <Movies />
     </div>
   );
 }

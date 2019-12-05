@@ -15,8 +15,7 @@ const initialData = {
   list: [],
   error: null
 };
-function Details(props) {
-  const [counter, setCounter] = useState(1);
+function Movies(props) {
   const [data, dispatch] = useReducer(dataReducer, initialData);
   useEffect(() => {
     axios
@@ -30,7 +29,7 @@ function Details(props) {
       });
   }, []);
   return (
-    <div className="details">
+    <div className="squares-movies">
       <h2>          {data.list
           .filter(element=> element._id===props.id)
           .map(movies => {
@@ -41,23 +40,17 @@ function Details(props) {
               )
           })}</h2>
       {data.error && <div className="error">Error</div>}
-      <ul>
+      <div>
           {data.list
-          .filter(element=> element._id===props.id)
           .map(movies => {
               return (
-                  <li key={movies._id}>
-                      <p>Year: {movies.year}</p>
-                      <p>Director: {movies.director}</p>
-                      <p>Rol: {movies.role}</p>
-                      <img src={movies.img_url} alt="image"/>
-                    
-                  </li>
+
+                  <p key={movies._id}><a href={`http://localhost:3000/details/${movies._id}`}>{movies.title}</a></p>
               )
           })}
-      </ul>
+      </div>
     </div>
   );
 }
 
-export default Details;
+export default Movies;

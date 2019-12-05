@@ -11,23 +11,39 @@ body {
 }
 .container {
   display: flex;
+  
 }
 
 .squares { 
   border: 1px solid black;
   width: 500px;
   text-align: center;
-  padding: 10px;
-  margin: 10px 20px;
+  margin: 10px;
   
-
 }
+
 .squares:hover {
   background-image: url('https://www.tvovermind.com/wp-content/uploads/2018/10/Murray-Caddyshack-750x415.jpg');
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 .squares:hover p{
+  background-color: white;
+}
+.squares-movies {
+  border: 1px solid black;
+  width: 500px;
+  text-align: center;
+  margin: 10px;
+  background-image: url('https://www.tvovermind.com/wp-content/uploads/2018/10/Murray-Caddyshack-750x415.jpg');
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+.squares-movies a {
+  text-decoration: none;
+  color: black;
+}
+.squares-movies a:hover {
   background-color: white;
 }
 form {
@@ -39,6 +55,12 @@ form {
 }
 .hola {
   width: 1000px;
+}
+.details {
+  background-color: white;
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
 }
 
 
