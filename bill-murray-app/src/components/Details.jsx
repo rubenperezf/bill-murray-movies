@@ -51,14 +51,11 @@ function Details(props) {
                       <p>Director: {movies.director}</p>
                       <p>Rol: {movies.role}</p>
                       <img src={movies.img_url} alt="image"/>
-                      <p>{movies._id}</p>
+                    
                   </li>
               )
           })}
       </ul>
-
- 
-      <h1>{props.id}</h1>
     </div>
   );
 }
